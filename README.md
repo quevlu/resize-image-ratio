@@ -2,6 +2,8 @@
 
 ## Use
 
+npm i --save @quevlu/resize-image-ratio
+
 ```
     import resizeImageRatio from "./resize-image-ratio";
 

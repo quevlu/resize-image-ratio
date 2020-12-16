@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/quevlu/resize-image-ratio/issues"
   },
-  "homepage": "https://github.com/quevlu/resize-image-ratio#readme"
+  "homepage": "https://github.com/quevlu/resize-image-ratio#readme",
+  "dependencies": {
+    "browser-image-size": "^1.1.0"
+  }
 }

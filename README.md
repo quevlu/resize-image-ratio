@@ -1,9 +1,5 @@
 # resize-image-ratio
 
-## Requisites
-
-npm i --save browser-image-size
-
 ## Use
 
 ```

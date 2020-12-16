@@ -1,0 +1,30 @@
+{
+  "name": "@quevlu/resize-image-ratio",
+  "version": "1.0.0",
+  "description": "Resize image ratio with custom width and height. It returns one object with background and the new file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quevlu/resize-image-ratio.git"
+  },
+  "keywords": [
+    "image",
+    "resize",
+    "ratio",
+    "aspect",
+    "size",
+    "width",
+    "height",
+    "jpg",
+    "png"
+  ],
+  "author": "quevlu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quevlu/resize-image-ratio/issues"
+  },
+  "homepage": "https://github.com/quevlu/resize-image-ratio#readme"
+}

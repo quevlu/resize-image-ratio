@@ -1,4 +1,4 @@
-var browserImageSize = require("browser-image-size");
+var browserImageSize = require("./browserImageSize");
 
 const getSizeImage = async (file) => {
   return await browserImageSize(file).then((size) => size);

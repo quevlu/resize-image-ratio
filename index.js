@@ -1,24 +1,25 @@
-var resizeImage = function (file, customWidth, customHeight) {
-  var file = file;
-  var reader = new FileReader();
-  var image = new Image();
-  var canvas = document.createElement("canvas");
+const createObjectURL = require("create-object-url");
 
-  var dataURItoBlob = function (dataURI) {
-    var bytes =
+const resizeImage = function (file, customWidth, customHeight) {
+  let reader = new FileReader();
+  let image = new Image();
+  let canvas = document.createElement("canvas");
+
+  const dataURItoBlob = function (dataURI) {
+    const bytes =
       dataURI.split(",")[0].indexOf("base64") >= 0
         ? atob(dataURI.split(",")[1])
         : unescape(dataURI.split(",")[1]);
-    var mime = dataURI.split(",")[0].split(":")[1].split(";")[0];
-    var max = bytes.length;
-    var ia = new Uint8Array(max);
+    const mime = dataURI.split(",")[0].split(":")[1].split(";")[0];
+    const max = bytes.length;
+    const ia = new Uint8Array(max);
     for (var i = 0; i < max; i++) ia[i] = bytes.charCodeAt(i);
     return new Blob([ia], { type: mime });
   };
 
-  var resize = function () {
-    var width = image.width;
-    var height = image.height;
+  const resize = function () {
+    let width = image.width;
+    let height = image.height;
 
     const maxWidth = customWidth || 1280;
     const maxHeight = customHeight || 960;
@@ -32,7 +33,8 @@ var resizeImage = function (file, customWidth, customHeight) {
     canvas.width = width;
     canvas.height = height;
     canvas.getContext("2d").drawImage(image, 0, 0, width, height);
-    var dataUrl = canvas.toDataURL();
+    const dataUrl = canvas.toDataURL();
+
     return dataURItoBlob(dataUrl);
   };
 
@@ -51,4 +53,14 @@ var resizeImage = function (file, customWidth, customHeight) {
   });
 };
 
-export default resizeImage;
+const getFileAndBackground = async (file, width, height) => {
+  const newFile = await resizeImage(file, width, height);
+  const preview = createObjectURL(newFile);
+
+  return {
+    file: newFile,
+    preview: preview,
+  };
+};
+
+export default getFileAndBackground;

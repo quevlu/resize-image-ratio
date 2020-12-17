@@ -1,6 +1,6 @@
 {
   "name": "@quevlu/resize-image-ratio",
-  "version": "1.1.0",
+  "version": "2.1.0",
   "description": "Resize image ratio with custom width and height. It returns one object with background and the new file",
   "main": "index.js",
   "scripts": {

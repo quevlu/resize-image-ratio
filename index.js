@@ -1,5 +1,3 @@
-const createObjectURL = require("create-object-url");
-
 const resizeImage = function (file, customWidth, customHeight) {
   let reader = new FileReader();
   let image = new Image();
@@ -64,7 +62,7 @@ const resizeImage = function (file, customWidth, customHeight) {
 
 const getFileAndBackground = async (file, width, height) => {
   const newFile = await resizeImage(file, width, height);
-  const preview = createObjectURL(newFile);
+  const preview = URL.createObjectURL(newFile);
 
   return {
     file: newFile,

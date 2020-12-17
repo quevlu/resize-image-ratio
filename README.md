@@ -5,15 +5,15 @@
 npm i --save @quevlu/resize-image-ratio
 
 ```
-    import resizeImageRatio from "./resize-image-ratio";
+    import resizeImageRatio from "@quevlu/resize-image-ratio";
 
     const file;
     const width = 1680;
     const height = 1050;
 
-    const fileObject = resizeImageRatio.resize(file,width,height);
+    const resizedFile = resizeImageRatio.resize(file,width,height);
 
-    console.log(fileObject);
+    console.log(resizedFile);
 ```
 
 ## Important

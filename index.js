@@ -13,7 +13,11 @@ const resizeImage = function (file, customWidth, customHeight) {
     const mime = dataURI.split(",")[0].split(":")[1].split(";")[0];
     const max = bytes.length;
     const ia = new Uint8Array(max);
-    for (var i = 0; i < max; i++) ia[i] = bytes.charCodeAt(i);
+
+    for (var i = 0; i < max; i++) {
+      ia[i] = bytes.charCodeAt(i);
+    }
+
     return new Blob([ia], { type: mime });
   };
 
@@ -30,10 +34,15 @@ const resizeImage = function (file, customWidth, customHeight) {
       height = height * ratio;
     }
 
+    const mimeOfImage =
+      image.currentSrc
+        .match(/^(data:image\/[a-z]{1,})/g)[0]
+        .replace("data:", "") || "image/png";
+
     canvas.width = width;
     canvas.height = height;
     canvas.getContext("2d").drawImage(image, 0, 0, width, height);
-    const dataUrl = canvas.toDataURL();
+    const dataUrl = canvas.toDataURL(mimeOfImage);
 
     return dataURItoBlob(dataUrl);
   };

@@ -1,21 +1,20 @@
 # resize-image-ratio
 
+This library allows to you for resizing images with custom width and height and keeps the same mime type from origin and give a preview image of resizing image.
+
 ## Use
 
-npm i --save @quevlu/resize-image-ratio
-
 ```
-    import resizeImageRatio from "@quevlu/resize-image-ratio";
+    const inputFile;
+    const width = 640;
+    const height = 480;
 
-    const file;
-    const width = 1680;
-    const height = 1050;
-
-    const resizedFile = resizeImageRatio.resize(file,width,height);
+    const resizedFile = resizeImageRatio.resize(inputFile,width,height);
 
     console.log(resizedFile);
+
+    {
+        file: fileResized,
+        preview: fileResizedPreview
+    }
 ```
-
-## Important
-
-Always return the image with mime type jpeg. I will have to handle different mime types.

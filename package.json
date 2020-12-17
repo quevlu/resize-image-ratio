@@ -27,7 +27,5 @@
     "url": "https://github.com/quevlu/resize-image-ratio/issues"
   },
   "homepage": "https://github.com/quevlu/resize-image-ratio#readme",
-  "dependencies": {
-    "create-object-url": "^1.0.2"
-  }
+  "dependencies": {}
 }

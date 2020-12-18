@@ -1,6 +1,6 @@
 # resize-image-ratio
 
-This library allows to you for resizing images with custom width and height and keeps the same mime type from origin and give a preview image of resizing image.
+This library allows to you for resizing images with custom width and height and keeps the same mime type from the origin and gives a preview image of resizing image.
 
 ## Use
 
